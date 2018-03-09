@@ -83,7 +83,7 @@
 		 cameraBG.position.z = 50;
 		 sceneBG = new THREE.Scene();
 
-		 var materialColor = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( '../assets/textures/starry_background.jpg' ), depthTest: false });
+		 var materialColor = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/baezor/3D/master/assets/textures/starry_background.jpg' ), depthTest: false });
 		 var bgPlane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), materialColor);
 		 bgPlane.position.z = -100;
 		 bgPlane.scale.set(window.innerWidth * 2, window.innerHeight * 2, 1);
@@ -115,13 +115,13 @@
 
  function createEarthMaterial() {
 		 // 4096 is the maximum width for maps
-		 var earthTexture = new THREE.TextureLoader().load( '../assets/textures/earthmap4k.jpg' );
+		 var earthTexture = new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthmap4k.jpg' );
 		 var earthMaterial = new THREE.MeshPhongMaterial({ map : earthTexture});
 		 return earthMaterial;
 		 }
 
  function createCloudMaterial() {
-		 var cloudTexture = new THREE.TextureLoader().load( '../assets/textures/fair_clouds_4k.png' );
+		 var cloudTexture = new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/baezor/3D/master/assets/textures/fair_clouds_4k.png' );
 		 var cloudMaterial = new THREE.MeshPhongMaterial({map: cloudTexture});
 		 cloudMaterial.transparent = true;
 
