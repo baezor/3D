@@ -1,2 +1,2 @@
-# 3d
-Doing 3D Animation practices with Three.js
+# 3D
+Doing 3D Animation practices with Three.js. Work in progress... monkey coding. 
