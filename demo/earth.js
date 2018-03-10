@@ -46,7 +46,7 @@
 		 cloudMesh.name = 'clouds';
 		 scene.add(cloudMesh);
 
-		 // now add some better lighting
+		 // now add some light
 		 var ambientLight = new THREE.AmbientLight(0x111111);
 		 ambientLight.name='ambient';
 		 scene.add(ambientLight);
@@ -114,16 +114,24 @@
  }
 
  function createEarthMaterial() {
-		 // 4096 is the maximum width for maps
-		 var earthTexture = new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthmap4k.jpg' );
-		 var earthMaterial = new THREE.MeshPhongMaterial({ map : earthTexture});
-		 return earthMaterial;
-		 }
+	   var textureLoader = new THREE.TextureLoader();
+
+		var material = new THREE.MeshPhongMaterial({
+		  map: textureLoader.load('https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthmap4k.jpg'),
+		  specularMap: textureLoader.load("https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthspec4k.jpg"),
+		  specular: new THREE.Color(0x262626),
+		  normalMap: textureLoader.load('https://raw.githubusercontent.com/baezor/3D/master/assets/assets/textures/earth_normalmap_flat4k.jpg'),
+		  normalScale: new THREE.Vector2(0.5, 0.7)
+		});
+		return material;
+	 }
 
  function createCloudMaterial() {
 		 var cloudTexture = new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/baezor/3D/master/assets/textures/fair_clouds_4k.png' );
 		 var cloudMaterial = new THREE.MeshPhongMaterial({map: cloudTexture});
-		 cloudMaterial.transparent = true;
+		 cloudMaterial.transparent = true
+		 cloudMaterial.opacity = 0.5
+		 cloudMaterial.blending = THREE.AdditiveBlending;
 
 		 return cloudMaterial;
 		 }
