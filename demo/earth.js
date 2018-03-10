@@ -120,7 +120,7 @@
 		  map: textureLoader.load('https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthmap4k.jpg'),
 		  specularMap: textureLoader.load("https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earthspec4k.jpg"),
 		  specular: new THREE.Color(0x262626),
-		  normalMap: textureLoader.load('https://raw.githubusercontent.com/baezor/3D/master/assets/assets/textures/earth_normalmap_flat4k.jpg'),
+		  normalMap: textureLoader.load('https://raw.githubusercontent.com/baezor/3D/master/assets/textures/earth_normalmap_flat4k.jpg'),
 		  normalScale: new THREE.Vector2(0.5, 0.7)
 		});
 		return material;
